@@ -33,4 +33,14 @@ class HackerNewsAppTests: XCTestCase {
         }
     }
     
+    //Storyboard
+    func testInitialViewController_IsItemListViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+        let rootViewController = navigationController.viewControllers[0]
+        
+        XCTAssertTrue(rootViewController is UISplitViewController)
+    }
+    
+    
 }
